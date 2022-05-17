@@ -13,12 +13,12 @@ public class PersonController {
 	@Autowired
 	private Person person;
 	
-	@RequestMapping("/")
+	@RequestMapping(value="/", method = RequestMethod.GET)
 	public String check() {
 		return "OK";
 	}
 	
-	@RequestMapping("/get")
+	@RequestMapping(value="/get", method = RequestMethod.GET)
 	public Person getPerson(@RequestParam(name="name", required=false, defaultValue="Unknown") String name ) {
 		person.setName(name);
 		return person;
